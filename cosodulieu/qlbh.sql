@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th4 29, 2020 lúc 02:24 PM
+-- Thời gian đã tạo: Th5 13, 2020 lúc 05:49 AM
 -- Phiên bản máy phục vụ: 10.4.6-MariaDB
 -- Phiên bản PHP: 7.3.9
 
@@ -69,7 +69,8 @@ CREATE TABLE `customers` (
 --
 
 INSERT INTO `customers` (`id`, `name`, `email`, `address`, `phone`, `sorting`, `tax_code`, `created_at`, `updated_at`) VALUES
-(1, 'Nguyễn Bình', 'nguyenbinh@yahoo.com.vn', '5/5 Hà Hoàng Hổ, 5/5 Hà Hoàng Hổ, TP Long Xuyên', '0837994780', 'khachhangle', '123456789', '2020-04-29 09:35:00', '2020-04-29 09:35:00');
+(1, 'Nguyễn Bình', 'nguyenbinh@yahoo.com.vn', '5/5 Hà Hoàng Hổ, 5/5 Hà Hoàng Hổ, TP Long Xuyên', '0837994780', 'khachhangle', '123456789', '2020-04-29 09:35:00', '2020-04-29 09:35:00'),
+(2, 'ádasdasdasd', NULL, NULL, NULL, 'khachhangle', '123456789', '2020-05-02 08:25:13', '2020-05-02 08:25:13');
 
 -- --------------------------------------------------------
 
@@ -142,7 +143,15 @@ CREATE TABLE `orders` (
 --
 
 INSERT INTO `orders` (`id`, `customer_id`, `kind`, `name`, `address`, `phone`, `discount`, `tax_code`, `tax`, `total_price`, `created_at`, `updated_at`) VALUES
-(1, 1, 'banhang', 'Nguyễn Bình', '5/5 Hà Hoàng Hổ, 5/5 Hà Hoàng Hổ, TP Long Xuyên', '0837994780', 0, '123456789', 10, 19459000.00, '2020-04-29 11:20:01', '2020-04-29 11:20:01');
+(1, 1, 'banhang', 'Nguyễn Bình', '5/5 Hà Hoàng Hổ, 5/5 Hà Hoàng Hổ, TP Long Xuyên', '0837994780', 0, '123456789', 10, 19459000.00, '2020-04-29 11:20:01', '2020-04-29 11:20:01'),
+(2, NULL, 'banhang', '123123123', NULL, NULL, 0, '12313123123', 10, 837283904.00, '2020-05-02 07:37:58', '2020-05-02 07:37:58'),
+(3, NULL, 'banhang', '123123123123', NULL, NULL, 0, '1123123', 10, 126500.00, '2020-05-02 07:40:21', '2020-05-02 07:40:21'),
+(4, 1, 'banhang', 'Nguyễn Bình', '5/5 Hà Hoàng Hổ, 5/5 Hà Hoàng Hổ, TP Long Xuyên', '0837994780', 0, '123456789', 10, 159500.00, '2020-05-02 07:41:37', '2020-05-02 07:41:37'),
+(5, 1, 'banhang', 'Nguyễn Bình', '5/5 Hà Hoàng Hổ, 5/5 Hà Hoàng Hổ, TP Long Xuyên', '0837994780', 0, '123456789', 10, 1059448512.00, '2020-05-02 07:41:54', '2020-05-02 07:41:54'),
+(6, 1, 'banhang', 'Nguyễn Bình', '5/5 Hà Hoàng Hổ, 5/5 Hà Hoàng Hổ, TP Long Xuyên', '0837994780', 0, '123456789', 0, 32144566.00, '2020-05-02 07:47:41', '2020-05-02 07:47:41'),
+(7, 2, 'banhang', 'ádasdasdasd', NULL, NULL, 0, '123456789', 10, 159500.00, '2020-05-02 08:25:13', '2020-05-02 08:25:13'),
+(8, 1, 'banhang', 'asdasdasdasdasd', '5/5 Hà Hoàng Hổ, 5/5 Hà Hoàng Hổ, TP Long Xuyên', '0837994780', 0, '123456789', 10, 159500.00, '2020-05-03 11:01:07', '2020-05-05 08:52:55'),
+(9, 1, 'banhang', 'Nguyễn Bình', '5/5 Hà Hoàng Hổ, 5/5 Hà Hoàng Hổ, TP Long Xuyên', '0837994780', 0, '123456789', 10, 159500.00, '2020-05-08 01:15:49', '2020-05-08 01:15:49');
 
 -- --------------------------------------------------------
 
@@ -172,7 +181,23 @@ CREATE TABLE `order_details` (
 
 INSERT INTO `order_details` (`id`, `product_id`, `order_id`, `product_name`, `product_code`, `quantity`, `unit`, `price`, `image`, `discount`, `totalprice`, `created_at`, `updated_at`) VALUES
 (1, 2, 1, 'Xi măng loại 2', 'XM0002', 122, 'Bao', 70000.00, 'tải xuống (2)_1588151102.jpg', 0, 8540000.00, '2020-04-29 11:20:01', '2020-04-29 11:20:01'),
-(2, 1, 1, 'Xi măng loại 1', 'XM0001', 122, 'Bao', 75000.00, 'tải xuống_1588151046.jpg', 0, 9150000.00, '2020-04-29 11:20:01', '2020-04-29 11:20:01');
+(2, 1, 1, 'Xi măng loại 1', 'XM0001', 122, 'Bao', 75000.00, 'tải xuống_1588151046.jpg', 0, 9150000.00, '2020-04-29 11:20:01', '2020-04-29 11:20:01'),
+(3, 2, 2, 'Xi măng loại 2', 'XM0002', 9831, 'Bao', 73337.00, 'tải xuống (2)_1588151102.jpg', 0, 720976064.00, '2020-05-02 07:37:58', '2020-05-02 07:37:58'),
+(4, 1, 2, 'Xi măng loại 1', 'XM0001', 1273, 'Bao', 31572.00, 'tải xuống_1588151046.jpg', 0, 40191156.00, '2020-05-02 07:37:58', '2020-05-02 07:37:58'),
+(5, 2, 3, 'Xi măng loại 2', 'XM0002', 1, 'Bao', 55000.00, 'tải xuống (2)_1588151102.jpg', 0, 55000.00, '2020-05-02 07:40:21', '2020-05-02 07:40:21'),
+(6, 1, 3, 'Xi măng loại 1', 'XM0001', 1, 'Bao', 60000.00, 'tải xuống_1588151046.jpg', 0, 60000.00, '2020-05-02 07:40:21', '2020-05-02 07:40:21'),
+(7, 2, 4, 'Xi măng loại 2', 'XM0002', 1, 'Bao', 70000.00, 'tải xuống (2)_1588151102.jpg', 0, 70000.00, '2020-05-02 07:41:37', '2020-05-02 07:41:37'),
+(8, 1, 4, 'Xi măng loại 1', 'XM0001', 1, 'Bao', 75000.00, 'tải xuống_1588151046.jpg', 0, 75000.00, '2020-05-02 07:41:37', '2020-05-02 07:41:37'),
+(9, 2, 5, 'Xi măng loại 2', 'XM0002', 12213, 'Bao', 70000.00, 'tải xuống (2)_1588151102.jpg', 0, 854910016.00, '2020-05-02 07:41:54', '2020-05-02 07:41:54'),
+(10, 1, 5, 'Xi măng loại 1', 'XM0001', 1443, 'Bao', 75000.00, 'tải xuống_1588151046.jpg', 0, 108225000.00, '2020-05-02 07:41:54', '2020-05-02 07:41:54'),
+(11, 1, 6, 'Xi măng loại 1', 'XM0001', 171, 'Bao', 133333.00, 'tải xuống_1588151046.jpg', 0, 22799944.00, '2020-05-02 07:47:41', '2020-05-02 07:47:41'),
+(12, 2, 6, 'Xi măng loại 2', 'XM0002', 131, 'Bao', 71333.00, 'tải xuống (2)_1588151102.jpg', 0, 9344623.00, '2020-05-02 07:47:41', '2020-05-02 07:47:41'),
+(13, 2, 7, 'Xi măng loại 2', 'XM0002', 1, 'Bao', 70000.00, 'tải xuống (2)_1588151102.jpg', 0, 70000.00, '2020-05-02 08:25:13', '2020-05-02 08:25:13'),
+(14, 1, 7, 'Xi măng loại 1', 'XM0001', 1, 'Bao', 75000.00, 'tải xuống_1588151046.jpg', 0, 75000.00, '2020-05-02 08:25:13', '2020-05-02 08:25:13'),
+(17, 2, 8, 'Xi măng loại 2', 'XM0002', 1, 'Bao', 70000.00, 'tải xuống (2)_1588151102.jpg', 0, 70000.00, '2020-05-05 08:52:55', '2020-05-05 08:52:55'),
+(18, 1, 8, 'Xi măng loại 1', 'XM0001', 1, 'Bao', 75000.00, 'tải xuống_1588151046.jpg', 0, 75000.00, '2020-05-05 08:52:55', '2020-05-05 08:52:55'),
+(19, 1, 9, 'Xi măng loại 1', 'XM0001', 1, 'Bao', 75000.00, 'tải xuống_1588151046.jpg', 0, 75000.00, '2020-05-08 01:15:49', '2020-05-08 01:15:49'),
+(20, 2, 9, 'Xi măng loại 2', 'XM0002', 1, 'Bao', 70000.00, 'tải xuống (2)_1588151102.jpg', 0, 70000.00, '2020-05-08 01:15:49', '2020-05-08 01:15:49');
 
 -- --------------------------------------------------------
 
@@ -209,9 +234,9 @@ INSERT INTO `price_list` (`id`, `name`, `cost`, `product_id`, `created_at`, `upd
 (7, 'Giá nhập', 50000.00, 1, '2020-04-29 09:04:06', '2020-04-29 09:04:06'),
 (8, 'Giá bán sỉ', 60000.00, 1, '2020-04-29 09:04:06', '2020-04-29 09:04:06'),
 (9, 'Giá bán lẻ', 75000.00, 1, '2020-04-29 09:04:06', '2020-04-29 09:04:06'),
-(19, 'Giá nhập', 45000.00, 2, '2020-04-29 09:05:04', '2020-04-29 09:05:04'),
-(20, 'Giá bán sỉ', 55000.00, 2, '2020-04-29 09:05:04', '2020-04-29 09:05:04'),
-(21, 'Giá bán lẻ', 70000.00, 2, '2020-04-29 09:05:04', '2020-04-29 09:05:04');
+(28, 'Giá nhập', 45000.00, 2, '2020-05-02 08:30:21', '2020-05-02 08:30:21'),
+(29, 'Giá bán sỉ', 55000.00, 2, '2020-05-02 08:30:21', '2020-05-02 08:30:21'),
+(30, 'Giá bán lẻ', 70000.00, 2, '2020-05-02 08:30:21', '2020-05-02 08:30:21');
 
 -- --------------------------------------------------------
 
@@ -240,8 +265,8 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id`, `name`, `code`, `description`, `unit`, `image`, `thumbnail`, `image_list`, `quantity`, `category_id`, `created_at`, `updated_at`, `unit_id`) VALUES
-(1, 'Xi măng loại 1', 'XM0001', 'không có mô tả', 'Bao', 'tải xuống_1588151046.jpg', 'noimage.jpg', '[\"noimage.jpg\",\"t\\u1ea3i xu\\u1ed1ng (1) - Copy_1588151046_list.jpg\",\"t\\u1ea3i xu\\u1ed1ng (1)_1588151046_list.jpg\"]', 9878, 4, '2020-04-29 09:00:42', '2020-04-29 11:20:01', 22),
-(2, 'Xi măng loại 2', 'XM0002', 'không có mô tả', 'Bao', 'tải xuống (2)_1588151102.jpg', 'noimage.jpg', '[\"t\\u1ea3i xu\\u1ed1ng (3)_1588151023.jpg\"]', 9878, 4, '2020-04-29 09:03:43', '2020-04-29 11:20:01', 22);
+(1, 'Xi măng loại 1', 'XM0001', 'không có mô tả', 'Bao', 'tải xuống_1588151046.jpg', 'noimage.jpg', '[\"noimage.jpg\",\"t\\u1ea3i xu\\u1ed1ng (1) - Copy_1588151046_list.jpg\",\"t\\u1ea3i xu\\u1ed1ng (1)_1588151046_list.jpg\"]', 6986, 4, '2020-04-29 09:00:42', '2020-05-08 01:15:49', 22),
+(2, 'Xi măng loại 2', 'XM0002', 'không có mô tả', 'Bao', 'tải xuống (2)_1588151102.jpg', 'noimage.jpg', '[]', 111098763, 4, '2020-04-29 09:03:43', '2020-05-08 01:15:49', 22);
 
 -- --------------------------------------------------------
 
@@ -1311,8 +1336,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `quyenhan`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'Nguyễn Bình', 'nguyenbinh@gmail.com', NULL, '$2y$10$wtL7VDAwtAqoS9EkHFgjouUdhWvq4v7CNUcir7hZfdWHsz.w6L/ry', 'admin', NULL, '2020-03-13 01:01:48', '2020-03-31 00:06:14'),
-(45, 'admin', 'admin@gmail.com', NULL, '$2y$10$Wm8OWusgOU4.VFvdUMsDAeUH7UP/eLVloRlq7ZiLxq/HS0duUvEK2', 'admin', NULL, '2020-04-29 06:34:11', '2020-04-29 06:34:11');
+(47, 'ADMIN', 'admin@gmail.com', NULL, '$2y$10$hU2vVYI5SSxcxUQbWC6B8OEF.WZBhANfu/Mt7Hd8MWfTdmIs7gxzC', 'admin', NULL, '2020-05-13 03:48:13', '2020-05-13 03:48:13');
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -1405,7 +1429,7 @@ ALTER TABLE `categories`
 -- AUTO_INCREMENT cho bảng `customers`
 --
 ALTER TABLE `customers`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT cho bảng `failed_jobs`
@@ -1423,19 +1447,19 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT cho bảng `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT cho bảng `order_details`
 --
 ALTER TABLE `order_details`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT cho bảng `price_list`
 --
 ALTER TABLE `price_list`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- AUTO_INCREMENT cho bảng `products`
@@ -1459,7 +1483,7 @@ ALTER TABLE `units`
 -- AUTO_INCREMENT cho bảng `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
